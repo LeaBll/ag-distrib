@@ -1,0 +1,438 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1{
+    font-size: 50px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Animations au scroll */
+.scroll-element {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scroll-element.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    background-color: white;
+}
+
+.logo img {
+    width: 80%;
+    margin : 20px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.nav-links a:hover {
+    font-weight: bold;
+    font-size: 20px;
+    background-color: #4fb477;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.burger-menu span {
+    height: 3px;
+    width: 25px;
+    background-color: white;
+    margin: 4px;
+}
+
+h1{
+    text-align: center;
+    margin: 80px;
+}
+
+/* Accueil Section */
+#accueil{
+    margin-top: 100px;
+}
+
+.accueil-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 100px 50px;
+    font-size: 18px;
+}
+
+.accueil-content h2{
+    margin: 15px 0;
+}
+
+img{
+    margin-left: 20px;
+    border-radius: 10px;
+}
+
+
+/* Secteurs Section */
+.secteurs-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px 200px;
+    font-size: 18px;
+}
+
+img{
+    margin-right: 20px;
+    max-width: 400px;
+}
+
+/*Carrousel client + partenaires*/
+#partenaires, #clients{
+    padding: 40px 0;
+}
+
+.titreCarrousel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%; /* Limite à 80% de la largeur de la page */
+    margin: 40px auto; /* Centre le conteneur horizontalement */
+    padding: 10px;
+    position: relative; /* Pour que le hover ne dépasse pas */
+}
+
+.titreCarrousel p, 
+.titreCarrousel h1 {
+    margin: 0;
+}
+
+.titreCarrousel p{
+    font-size: 39px;
+    font-weight: bold;
+}
+
+.titreCarrousel h1 {
+    text-align: center;
+    flex: 1;
+    font-size: 36px;
+    position: relative; /* Pour contenir l'effet hover */
+    z-index: 1; /* S'assurer que le h1 est au-dessus du fond */
+}
+
+.titreCarrousel span {
+    font-size: 30px;
+    z-index: 1; /* Pour que la flèche soit au-dessus du hover */
+    background-color: transparent; /* Aucune interaction avec le hover */
+}
+
+/* Effet hover sur p et h1 uniquement */
+.titreCarrousel:hover p,
+.titreCarrousel:hover h1 {
+    background-color: #4fb477;
+    transition: all 0.3s ease;
+    transform: translateX(30px);
+}
+
+/* S'assurer que la flèche n'est pas affectée par le hover */
+.titreCarrousel:hover span {
+    background-color: transparent; /* Flèche sans fond */
+    transform: none; /* Pas de déplacement de la flèche */
+}
+
+.slider {
+    align-items: center;
+    background: white;
+    display: flex;
+    justify-content: center;
+    background: pr;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    width: 80%;
+}
+
+@-webkit-keyframes scroll {
+    0% {
+        -webkit-transform: translateX(0); /* Commence à 0 */
+        transform: translateX(0); /* Commence à 0 */
+    }
+    100% {
+        -webkit-transform: translateX(calc(-250px * 14)); /* Défile tout le contenu */
+        transform: translateX(calc(-250px * 14)); /* Défile tout le contenu */
+    }
+}
+
+@keyframes scroll {
+    0% {
+        -webkit-transform: translateX(0); /* Commence à 0 */
+        transform: translateX(0); /* Commence à 0 */
+    }
+    100% {
+        -webkit-transform: translateX(calc(-250px * 14)); /* Défile tout le contenu */
+        transform: translateX(calc(-250px * 14)); /* Défile tout le contenu */
+    }
+}
+
+    
+.slider::before, .slider::after {
+    background: linear-gradient(to right, white 0%, rgba(255, 255, 255, 0) 100%);
+    content: "";
+    height: 100px;
+    position: absolute;
+    width: 200px;
+    z-index: 2;
+}
+    
+.slider::after {
+    right: 0;
+    top: 0;
+    -webkit-transform: rotateZ(180deg);
+    transform: rotateZ(180deg);
+}
+    
+.slider::before {
+    left: 0;
+    top: 0;
+}
+    
+.slider .slide-track {
+    -webkit-animation: scroll 40s linear infinite;
+    animation: scroll 40s linear infinite;
+    display: flex;
+    width: calc(250px * 14);
+}
+    
+.slider .slide {
+    height: 100px;
+    width: 250px;
+    margin: 0 10px;
+}
+
+/*Compteur client*/
+.chiffres h2{
+    text-align: center;
+    margin-top: 60px;
+}
+
+#counter {
+    font-size: 24px;
+    text-align: center;
+    padding: 40px 0;
+}
+
+/*Partenaires*/
+#partenaires{
+    margin-bottom: 40px;
+}
+
+/*Activités*/
+#activites{
+    margin-bottom: 40px;
+}
+
+/* Section Agents commerciaux */
+
+#agents{
+    margin: 0 100px;
+}
+
+/* Conteneur des cards */
+.cardAgents {
+    display: flex;
+    justify-content: space-between; /* Espace entre chaque card */
+    flex-wrap: wrap; /* Pour que les cards passent à la ligne sur mobile */
+    margin: 40px 20px;
+    gap: 20px; /* Ajoute de l'espace entre les cards */
+}
+
+/* Style des cards */
+.agent-card {
+    border: 1px solid #ccc;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    flex: 1 1 calc(33.33% - 40px); /* Chaque card occupe environ 1/3 de la largeur */
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Un peu d'ombre pour l'effet */
+    transition: transform 0.3s ease; 
+}
+
+/* Effet de hover sur les cards */
+.agent-card:hover {
+    transform: scale(1.05);
+}
+
+/* Style des images dans les cards */
+.agent-card img {
+    max-width: 150px;
+    margin-bottom: 15px;
+    border-radius: 5%;
+}
+
+/* Style des informations dans les cards */
+.agent-card h3 {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+.agent-card p {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.agent-card p img {
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.agent-card a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #0073b1; /* Couleur de LinkedIn */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Contact Section */
+#contact form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 20px;
+}
+
+label {
+    margin: 10px 0; /* Ajoute un espace entre le label et l'input */
+    font-weight: bold; /* Facultatif : rendre les labels plus visibles */
+}
+
+textarea {
+    width: 100%;
+    max-width: 600px;
+    height: 100px;
+}
+
+input[type="text"], 
+input[type="email"], 
+input[type="tel"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #3f6634;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+button :hover{
+    font-weight: bold;
+}
+
+.emplacement{
+    display: flex;
+    justify-content: center;
+}
+
+.adresse{
+    display: flex;
+    align-items: center;
+}
+
+/*Section Actualités*/
+#evenements h2{
+    text-align: center;
+    margin: 40px 0;
+}
+
+#evenements article{
+    border: #333 1px solid;
+    border-radius: 10px;
+    margin: 20px auto;
+}
+
+.salons{
+    display: flex;
+    justify-content: space-around;
+}
+
+.salons img{
+    padding: 10px;
+    align-items: center;
+}
+
+.blog-articles{
+    display: flex;
+    justify-content: center;
+}
+
+.article-card{
+    border: #333 1px solid;
+    border-radius: 10px;
+    margin: 20px 40px;
+}
+
+/* Footer */
+footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background: rgb(220,255,253);
+    background: radial-gradient(circle, rgba(220,255,253,1) 25%, rgba(79,180,119,1) 70%);
+    color: black;
+}
+
+footer a{
+    text-decoration: none;
+    color: black;
+    font-size: larger;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+
+
